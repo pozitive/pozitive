@@ -10,8 +10,8 @@ server '109.120.166.48', roles: [:web, :app, :db, :workers], ssh_options: {
   forward_agent: true
 }
 
-set :application, 'pozitiveit'
-set :repo_url, 'git@github.com:pozitive/pozitiveit.git'
+set :application, 'poizitive'
+set :repo_url, 'git@github.com:pozitive/poizitive.git'
 
 set :default_environment, { 'PATH' => '$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH' }
 set :rbenv_type, :user # or :system, depends on your rbenv setup
@@ -25,7 +25,7 @@ set :rbenv_roles, :all # default value
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/home/deploy/apps/pozitiveit"
+set :deploy_to, "/home/deploy/apps/poizitive"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -67,8 +67,8 @@ namespace :deploy do
 
   task :setup_config do
     on roles(:app) do
-      sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/pozitiveit"
-      sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_pozitiveit"
+      sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/poizitive"
+      sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_poizitive"
       execute "mkdir -p #{current_path}/tmp/pids"
       execute "mkdir -p #{shared_path}/config"
       execute "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
