@@ -10,9 +10,10 @@
 
   - if @blog.present?
     %h1= @blog.try(:name)
-    .main-image
-      %ul.clearing-thumbs.clearing-featur{data: {clearing: ""}}
-        %li= link_to (image_tag @blog.image_url(:large).to_s), @blog.image_url
+    - if @blog.image.present?
+      .main-image
+        %ul.clearing-thumbs.clearing-featur{data: {clearing: ""}}
+          %li= link_to (image_tag @blog.image_url(:large).to_s), @blog.image_url
     = markdown @blog.try(:content)
 
 .row

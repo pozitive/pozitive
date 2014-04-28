@@ -6,11 +6,13 @@ class ApplicationController < ActionController::Base
   
   private
   def set_locale
-    I18n.locale = params[:locale] if params[:locale].present? || I18n.default_locale
+    I18n.locale = extract_locale_from_tld || I18n.default_locale
   end
 
-  def default_url_options(options = {})
-    {locale: I18n.locale}
+  def extract_locale_from_tld
+    parsed_locale = request.host.split('.').last
+    parsed_locale = :ru if parsed_locale == "biz"
+    I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
   end
 
 end

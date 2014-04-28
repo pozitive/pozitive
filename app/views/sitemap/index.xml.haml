@@ -1,16 +1,14 @@
 - base_url = "http://#{request.host_with_port}"
 !!! XML
 %urlset{:xmlns => "http://www.sitemaps.org/schemas/sitemap/0.9"}
-  - @blogs.each do |locale, blogs|
-    - blogs.each do |blog| 
-      %url
-        %loc #{base_url}/#{locale}/#{blog.permalink}
-        %lastmod=blog.updated_at.strftime("%Y-%m-%d")
-        %changefreq monthly
-        %priority 0.5
-  - @static_pages.each do |locale, static_pages|
-    - static_pages.each do |page| 
-      %url
-        %loc #{base_url}/#{locale}/#{page}
-        %changefreq monthly
-        %priority 0.9
+  - @blogs.each do |blog| 
+    %url
+      %loc #{base_url}/blogs/#{blog.permalink}
+      %lastmod=blog.updated_at.strftime("%Y-%m-%d")
+      %changefreq monthly
+      %priority 0.5
+  - @static_pages.each do |page| 
+    %url
+      %loc #{base_url}/#{page}
+      %changefreq monthly
+      %priority 0.9

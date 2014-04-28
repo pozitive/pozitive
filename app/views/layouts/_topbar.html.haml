@@ -25,9 +25,8 @@
         %li.has-dropdown
           = link_to "LANGUAGES", locale: "en"
           %ul.dropdown
-            %li= link_to "ENGLISH", locale: "en"
-            %li= link_to "РУССКИЙ", locale: "ru"
-            %li= link_to "简体中文", locale: "zh-CN"
+            %li= link_to "ENGLISH", "http://pozitiveit.com"
+            %li= link_to "РУССКИЙ", "http://pozitive.biz"
         %li.divider
         %li.has-form.hide-for-large-only
           = link_to t('jumpproject'), new_message_path(type_website: "Startup"), class: "button alert tiny radius ", id: 'kick'

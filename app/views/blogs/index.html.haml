@@ -8,13 +8,19 @@
   %article
     .row
       .columns.small-12
-        %header
-          %h3= link_to blog.name, blog_path(blog)
     .row
-      .columns.large-5
-        = link_to (image_tag blog.image_url(:large).to_s), blog.image_url
-      .columns.large-7
-        %p= truncate_html (markdown blog.content), length: 500
+      - if blog.image.present?
+        .columns.large-5
+          = link_to (image_tag blog.image_url(:large).to_s), blog.image_url 
+        .columns.large-7
+          %header
+            %h3= link_to blog.name, blog_path(blog)
+            %p= truncate_html (markdown blog.content), length: 500
+      - else
+        .columns.large-12
+          %header
+            %h3= link_to blog.name, blog_path(blog)
+            %p= truncate_html (markdown blog.content), length: 500
     .row
       .columns.small-12
         %p= blog.updated_at
