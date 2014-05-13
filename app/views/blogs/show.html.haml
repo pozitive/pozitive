@@ -1,3 +1,11 @@
+- content_for :head do
+  = tag :meta, property: "og:title", content: @blog.name
+  = tag :meta, property: "og:site_name", content: "Pozitive"
+  = tag :meta, property: "og:type", content: "pozitive:blog"
+  = tag :meta, property: "og:url", content: blog_url(@blog)
+  = tag :meta, property: "og:image", content: @blog.image_url || image_url("logo_75.png")
+  = tag :meta, property: "og:description", content: @blog.summary if @blog.summary
+
 - title @blog.name
 - meta_keywords @blog.keyword
 - meta_description @blog.summary
@@ -15,6 +23,20 @@
         %ul.clearing-thumbs.clearing-featur{data: {clearing: ""}}
           %li= link_to (image_tag @blog.image_url(:large).to_s), @blog.image_url
     = markdown @blog.try(:content)
+
+- if @blog.admin.present? 
+  .row
+    .columns.large-6.medium-8.small-12
+      %hr
+      %ul.inline-list
+        %li= image_tag avatar_url(@blog.admin)
+        %li
+          %h3= @blog.admin.name 
+      %p= @blog.admin.bio
+      %hr
+.row
+  .columns
+    .fb-comments{data: { href: "http://pozitiveit.com/blogs", numposts: "15", colorscheme: "light"}}
 
 .row
   .columns.social

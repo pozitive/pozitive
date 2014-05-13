@@ -1,12 +1,11 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :show_blog, only: :show
-  before_filter :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
+  before_filter :authenticate_admin!, except: [:show, :index]
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.with_translations(I18n.locale)
+    @blogs = Blog.order("updated_at DESC").all
   end
 
   # GET /blogs/1
@@ -26,8 +25,10 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
+    @admin = current_admin
     @blog = Blog.new(blog_params)
-
+    @admin.blogs << @blog
+    
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
@@ -67,10 +68,6 @@ class BlogsController < ApplicationController
     def not_found
       raise ActionController::RoutingError.new('Not Found')
     end
-    # Use callbacks to share common setup or constraints between actions.
-    def show_blog
-      @blog = Blog.with_translations(I18n.locale).find_by_permalink(params[:id]) || not_found
-    end
 
     def set_blog
       @blog = Blog.find_by_permalink(params[:id])
@@ -78,6 +75,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:name, :permalink, :image, :content, :summary, :keyword, :remote_image_url)
+      params.require(:blog).permit(:name, :permalink, :image, :content, :summary, :keyword, :remote_image_url, :admin_id)
     end
 end

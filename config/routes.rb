@@ -21,8 +21,14 @@ Pozitive::Application.routes.draw do
   get 'portfolio' => 'pages#portfolio'
   get 'about_us' => 'pages#aboutus'
   get 'contact_us' => 'pages#contactus'
+  get 'our_process' => 'pages#our_process'
   root to: 'pages#welcome'
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :admins, :skip => [:registrations] 
+  as :admin do
+    get 'admins/edit' => 'admins/registrations#edit', :as => 'edit_admin_registration'
+    put 'admins' => 'admins/registrations#update', :as => 'admin_registration'
+  end
 
   get 'sitemap.xml' => 'sitemap#index', as:'sitemap', defaults: {format: 'xml'}
   

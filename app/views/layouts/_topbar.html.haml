@@ -9,26 +9,21 @@
           %span MENU
     %section.top-bar-section
       %ul#navbar.right
-        %li.divider
-        %li= link_to t('home'), root_path
-        %li.divider
-        %li= link_to t('services'), services_path
-        %li.divider
-        %li= link_to t('works'), portfolio_path
-        %li.divider
-        %li= link_to t('process'), page_path(Page.find_by_permalink('our-process'))
-        %li.divider
-        %li= link_to t('about-us'), about_us_path
-        %li.divider
-        %li= link_to t('contact'), contact_us_path
+        = render "layouts/menu"
         %li.divider
         %li.has-dropdown
-          = link_to "LANGUAGES", locale: "en"
+          = link_to "SETTINGS", locale: "en"
           %ul.dropdown
-            %li= link_to "ENGLISH", "http://pozitiveit.com"
             %li= link_to "РУССКИЙ", "http://pozitive.biz"
-        %li.divider
-        %li.has-form.hide-for-large-only
-          = link_to t('jumpproject'), new_message_path(type_website: "Startup"), class: "button alert tiny radius ", id: 'kick'
-        
-        = link_to "<i class='fi-power'></i>".html_safe, destroy_user_session_path, :method => :delete, class: "button tiny radius alert power" if user_signed_in?
+            %li= link_to t('jumpproject'), new_message_path(type_website: "Startup")
+            - if user_signed_in?
+              %li= link_to 'EDIT PROFILE', edit_user_registration_path
+              %li= link_to "<i class='fi-power'></i> LOGOUT".html_safe, destroy_user_session_path, :method => :delete
+            - else
+              %li= link_to "SIGN IN WITH FACEBOOK", "/users/auth/facebook", id: "sign_in"
+              %li= link_to "SIGN UP", new_user_registration_path
+              %li= link_to "SIGN IN", new_user_session_path
+            - if admin_signed_in?
+              %li= link_to 'EDIT PROFILE', edit_admin_registration_path
+              %li= link_to "<i class='fi-power'></i> LOGOUT".html_safe, destroy_admin_session_path, :method => :delete
+

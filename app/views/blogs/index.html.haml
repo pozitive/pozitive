@@ -2,7 +2,7 @@
   %li= link_to t('home'), root_path
 
 %h1= t('blogs.blog')
-= link_to 'New Blog Page', new_blog_path if user_signed_in? 
+= link_to 'New Blog Page', new_blog_path if admin_signed_in? 
 %hr
 - @blogs.each do |blog|
   %article
@@ -27,4 +27,4 @@
     .row
       .columns.large-12
         %p= link_to 'Read more', blog_path(blog), class: 'button tiny radius'
-        %p= link_to 'Edit', edit_blog_path(blog) if user_signed_in?
+        %p= link_to 'Edit', edit_blog_path(blog) if admin_signed_in?

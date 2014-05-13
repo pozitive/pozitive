@@ -8,6 +8,8 @@
     %title= title
     %meta{ name: 'keywords', content: meta_keywords } 
     %meta{ name: 'description', content: meta_description }
+    = tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_APP_ID"]
+    = yield :head
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags

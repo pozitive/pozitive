@@ -1,6 +1,6 @@
 module BlogsHelper
   def manage_blog
-    if user_signed_in?
+    if admin_signed_in?
       raw <<-HTML
           <nav class="button-bar">
             <ul class="button-group radius">

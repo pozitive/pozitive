@@ -1,4 +1,8 @@
 - content_for :top do
+  - if notice.present?
+    .alert-box.no-margin{data: { alert: ""}}
+      #notice= notice 
+      %a.close{href:"#"} &times;
   = render "hero"
   = render "promo"
   = render "portfolio"

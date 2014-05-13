@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
+  before_filter :authenticate_admin!, only: [:create, :new, :edit, :update, :destroy]
   helper :all
 
   # GET /pages
@@ -15,9 +15,9 @@ class PagesController < ApplicationController
   end
   
   def welcome
-    @responsive = view_context.services_item('responsive')
     @ror = view_context.services_item('ror')
     @seo = view_context.services_item('multilingual-seo')
+    @responsive = view_context.services_item('responsive')
     @work = view_context.content_item('our-work')
     @process = view_context.content_item('our-process')
     @message = Message.new

@@ -1013,6 +1013,9 @@ $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 html, body {
     height: 100%;
 }
+.no-margin {
+    margin: 0;
+}
 /* .wrapper { */
 /*     height: auto !important; */
 /*     height: 100%; */
@@ -1372,6 +1375,7 @@ button.basic {
 	opacity: 1;
     }
     .social {
+	margin: 0;
 	p {
 	    margin-bottom: rem-calc(5);
 	}

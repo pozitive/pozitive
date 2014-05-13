@@ -1,6 +1,0 @@
-class CreatePageTranslations < ActiveRecord::Migration
-  def change
-    create_table :page_translations do |t|
-    end
-  end
-end

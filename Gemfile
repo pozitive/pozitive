@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.1.0"
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.1'
 gem 'pg'  # PostgreSQL database support
 gem 'sass-rails', '~> 4.0.0' # Sass stylesheet language
 gem 'uglifier', '>= 1.3.0'   # Javascript compressor
@@ -15,6 +15,7 @@ gem 'foundation-rails', github: "zurb/foundation-rails"
 gem 'globalize', '~> 4.0.0.alpha.2'
 gem 'figaro'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'truncate_html'
 gem 'foundation-icons-sass-rails'
 gem 'redcarpet'
@@ -22,6 +23,7 @@ gem 'metamagic'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog'
+gem 'cloudinary'
 gem 'unicorn' # Use unicorn as the app server
 gem 'capistrano', group: :development # Use Capistrano for deployment
 gem 'capistrano-rbenv'
