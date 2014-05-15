@@ -21,6 +21,7 @@ class PagesController < ApplicationController
     @work = view_context.content_item('our-work')
     @process = view_context.content_item('our-process')
     @message = Message.new
+    @blogs = Blog.last(2)
   end
 
   def aboutus

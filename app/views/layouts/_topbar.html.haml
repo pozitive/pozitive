@@ -1,5 +1,5 @@
-%header#header.sticky
-  %nav.top-bar.shadow{data: {topbar: ""}}
+%header#header
+  %nav.top-bar.shadow{data: {topbar: "", options: "back_text: Назад"}}
     %ul.title-area
       %li.name
         %h1#logo
@@ -12,18 +12,17 @@
         = render "layouts/menu"
         %li.divider
         %li.has-dropdown
-          = link_to "SETTINGS", locale: "en"
+          = link_to "НАСТРОЙКИ", locale: "en"
           %ul.dropdown
-            %li= link_to "РУССКИЙ", "http://pozitive.biz"
+            %li= link_to "ENGLISH", "http://pozitiveit.com"
             %li= link_to t('jumpproject'), new_message_path(type_website: "Startup")
             - if user_signed_in?
-              %li= link_to 'EDIT PROFILE', edit_user_registration_path
-              %li= link_to "<i class='fi-power'></i> LOGOUT".html_safe, destroy_user_session_path, :method => :delete
+              %li= link_to 'РЕДАКТИРОВАТЬ ПРОФАЙЛ', edit_user_registration_path
+              %li= link_to "<i class='fi-power'></i> ВЫЙТИ".html_safe, destroy_user_session_path, :method => :delete
             - else
-              %li= link_to "SIGN IN WITH FACEBOOK", "/users/auth/facebook", id: "sign_in"
-              %li= link_to "SIGN UP", new_user_registration_path
-              %li= link_to "SIGN IN", new_user_session_path
+              %li= link_to "РЕГИСТРАЦИЯ", new_user_registration_path
+              %li= link_to "ВХОД", new_user_session_path
             - if admin_signed_in?
-              %li= link_to 'EDIT PROFILE', edit_admin_registration_path
-              %li= link_to "<i class='fi-power'></i> LOGOUT".html_safe, destroy_admin_session_path, :method => :delete
+              %li= link_to 'РЕДАКТИРОВАТЬ ПРОФАЙЛ', edit_admin_registration_path
+              %li= link_to "<i class='fi-power'></i> ВЫЙТИ".html_safe, destroy_admin_session_path, :method => :delete
 

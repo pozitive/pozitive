@@ -1079,8 +1079,7 @@ $color-bg: #F4F6F8;
 	@include text-shadow(rgba(black, 1) 2px 2px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
     }
     h1 {
-	margin-top: rem-calc(20);
-	font-family: 'Allura', cursive;
+
     }
     h2 {
     }
@@ -1100,12 +1099,11 @@ h1.slogan {
     font-weight: bold;
     text-shadow: 1px 1px 1px #444;
     text-align: center;
-    font-size: rem-calc(44);
     font-family: 'Dejavu Sans Mono';
     span {
 	color: #FF0000;
     }
-    padding-bottom: 50px;
+    padding: rem-calc(50) 0 0 0;
 }
 
 .sections {
@@ -1449,15 +1447,6 @@ button.basic {
     .intro {
 	height: 600px;
 	background-image: image-url("hk/hk_1200.jpg");
-	.motivation {
-	    padding-top: rem-calc(40);
-	}
-	h1 {
-	    font-size: rem-calc(70);
-	}
-	p {
-	    font-size: rem-calc(18);
-	}
     }
     .hireus {
 	background-image: image-url("key/key_1200.jpg");
@@ -1475,21 +1464,12 @@ button.basic {
     }
     .intro {
 	background-image: image-url("hk/hk_1920.jpg");
-	h1 {
-	    font-size: rem-calc(100);
-	}
-	p {
-	    font-size: rem-calc(22);
-	}
-	.button {
-	    font-size: rem-calc(25);
-	}
     }
     h1#logo {
 	font-size: rem-calc(25);
     }
     h1.slogan {
-	font-size: rem-calc(64);
+	font-size: rem-calc(55);
     }
     #promo h3 {
 	font-size: rem-calc(23);

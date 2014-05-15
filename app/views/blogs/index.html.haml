@@ -7,8 +7,6 @@
 - @blogs.each do |blog|
   %article
     .row
-      .columns.small-12
-    .row
       - if blog.image.present?
         .columns.large-5
           = link_to (image_tag blog.image_url(:large).to_s), blog.image_url 

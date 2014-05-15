@@ -1,56 +1,58 @@
 %section#price.sections.tools
   .row
     .columns
-      %h1= t('Website_Pricing')
+      %h1 Стоимость проектирования
       %hr
   .row
     .columns.small-6.medium-3
       %ul.pricing-table
-        %li.title Landing Page
-        %li.price <small>starting from</small> $999
-        %li.bullet-item= t('price.singlepage')
-        %li.bullet-item= t('price.mobile')
-        %li.bullet-item HTML 5 / CSS 3
-        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "Landing Page"), class: "button secondary radius"
-
-    .columns.small-6.medium-3
-      %ul.pricing-table
-        %li.title Standard Website
-        %li.price <small>starting from</small> $1799
-        %li.bullet-item 5-15 pages
-        %li.bullet-item= t('price.mobile')
+        %li.title Продающая страница
+        %li.price 29000 <small>рублей</small> 
+        %li.bullet-item Одностраничный сайт
+        %li.bullet-item Адаптивный веб-дизайн
         %li.bullet-item HTML 5 / CSS 3 / JavaScript
-        %li.bullet-item= t('price.support')
-        %li.bullet-item Domain E-mail
-        %li.bullet-item Scrolling or Fixed
-        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "Standart Website"), class: "button secondary radius"
+        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "Landing Page"), class: "button success radius"
 
     .columns.small-6.medium-3
       %ul.pricing-table
-        %li.title E-commerce
-        %li.price <small>starting from</small> $2499
-        %li.bullet-item up to 50 pages
-        %li.bullet-item= t('price.mobile')
-        %li.bullet-item HTML 5 / CSS 3 / JavaScript
-        %li.bullet-item= t('price.support')
-        %li.bullet-item Domain E-mail
-        %li.bullet-item Scrolling or Fixed
-        %li.bullet-item Shopping cart
-        %li.bullet-item E-paymentp
-        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "E-commerce"), class: "button secondary radius"
-
-    .columns.small-6.medium-3
-      %ul.pricing-table
-        %li.title PRO Web App
-        %li.price <small>starting from</small> $2850
+        %li.title Корпоративный сайт
+        %li.price 49000 <small>рублей</small>
         %li.bullet-item Ruby on Rails
-        %li.bullet-item= t('price.mobile')
+        %li.bullet-item Почта для домена
+        %li.bullet-item Адаптивный веб-дизайн
+        %li.bullet-item Система управления сайтом 
+        %li.bullet-item Обучение администрирование
+        %li.bullet-item Профессиональная поддержка
         %li.bullet-item HTML 5 / CSS 3 / JavaScript
-        %li.bullet-item= t('price.support')
-        %li.bullet-item Domain E-mail
-        %li.bullet-item Scrolling or Fixed
-        %li.bullet-item= t('price.support')
-        %li.bullet-item Real-time web
-        %li.bullet-item Custom Software
-        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "PRO Web App"), class: "button secondary radius"
-          
+        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "Standart Website"), class: "button success radius"
+
+    .columns.small-6.medium-3
+      %ul.pricing-table
+        %li.title Электронная коммерция
+        %li.price 69000 <small>рублей</small>
+        %li.bullet-item Ruby on Rails
+        %li.bullet-item Почта для домена
+        %li.bullet-item Адаптивный веб-дизайн
+        %li.bullet-item Система управления сайтом 
+        %li.bullet-item Обучение администрирование
+        %li.bullet-item Профессиональная поддержка
+        %li.bullet-item HTML 5 / CSS 3 / JavaScript
+        %li.bullet-item Корзина покупателя
+        %li.bullet-item Онлайн платежи
+        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "E-commerce Website"), class: "button success radius"
+
+    .columns.small-6.medium-3
+      %ul.pricing-table
+        %li.title ПРО Веб-приложение
+        %li.price 99000 <small>рублей</small>
+        %li.bullet-item Ruby on Rails
+        %li.bullet-item Почта для домена
+        %li.bullet-item Адаптивный веб-дизайн
+        %li.bullet-item Система управления сайтом 
+        %li.bullet-item Обучение администрирование
+        %li.bullet-item Профессиональная поддержка
+        %li.bullet-item HTML 5 / CSS 3 / JavaScript
+        %li.bullet-item Веб реального времени
+        %li.bullet-item Масштабируемость
+        %li.bullet-item Покрытие тестами
+        %li.cta-button= link_to t('order_now'), new_message_path(type_website: "PRO Web App"), class: "button success radius"

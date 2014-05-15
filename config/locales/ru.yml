@@ -3,7 +3,7 @@ ru:
   home: 'ГЛАВНАЯ'
   services: 'УСЛУГИ'
   Services: 'Услуги'
-  works: 'РАБОТ'
+  works: 'РАБОТЫ'
   process: 'ПРОЦЕСС'
   team: 'КОМАНДА'
   pricing: 'ЦЕНА'
@@ -25,7 +25,7 @@ ru:
   Website_Pricing: 'Стоимость разработки'
   order_now: 'Заказать сейчас'
   # Contact Us
-  getresponse: 'Контакты!'
+  getresponse: 'Контакты'
   We_respond: 'Мы гаратируем ответ в течении 24 часов'
   message: 'СВЯЗЬ С НАМИ'
   form:

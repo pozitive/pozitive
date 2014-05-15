@@ -3,6 +3,6 @@ class MessageMailer < ActionMailer::Base
 
   def contact_form(message)
     @message = message
-    mail(to: 'coddeys@gmail.com, china@pozitive.biz, brett@pozitive.biz', subject: 'Request from Pozitive contact form!')
+    mail(to: 'coddeys@gmail.com, china@pozitive.biz', subject: 'Request from Pozitive contact form!')
   end
 end

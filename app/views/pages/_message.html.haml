@@ -9,12 +9,12 @@
     .row
       #name.small-12.columns
         %label= t('form.name')
-        = f.text_field :name, {required: '', placeholder: "Your Name here"}
+        = f.text_field :name, {required: '', placeholder: "Ваше имя пожалуйста"}
       #email.small-12.columns
         %label= t('form.email')
-        = f.text_field :email, {required: '', placeholder: "Yourname@example.biz"}
+        = f.text_field :email, {required: '', placeholder: "Адресс электронной почты"}
       #message.small-12.columns
         %label= t('form.message')
-        = f.text_area :message, {required: '', placeholder: "Write your message here..."}
+        = f.text_area :message, {required: '', placeholder: "Сообщение ..."}
       #send_button.small-12.columns
         = f.submit t('form.send'), class: 'button alert'
