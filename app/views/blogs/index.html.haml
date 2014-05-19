@@ -1,7 +1,7 @@
 %ul.breadcrumbs
   %li= link_to t('home'), root_path
 
-%h1= t('blogs.blog')
+%h1 Блог
 = link_to 'New Blog Page', new_blog_path if admin_signed_in? 
 %hr
 - @blogs.each do |blog|
