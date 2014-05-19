@@ -7,28 +7,28 @@
           %li= msg
 
   .field
-    = f.label :name
-    = f.text_field :name, {required: '', placeholder: "Your Name here"}
+    = f.label "Имя"
+    = f.text_field :name, {required: '', placeholder: "Ваше имя"}
   .field
-    = f.label :phone
+    = f.label "Телефон"
     = f.text_field :phone, {placeholder: "(555) 555-5555"}
   .field
-    = f.label :email
+    = f.label "Электронная почта"
     = f.text_field :email, {required: '', placeholder: "Yourname@example.biz"}
   .field.hide
-    = f.label :company
-    = f.text_field :company, {placeholder: "Write your company name ..."}
+    = f.label "Компания"
+    = f.text_field :company, {placeholder: "Пожалуйста напишите название вашей компании ..."}
   .field.hide
-    = f.label :idea
-    = f.text_field :idea, {placeholder: "Write your idea here ..."}
+    = f.label "Идея"
+    = f.text_field :idea, {placeholder: "Коротко о вашей идеи ..."}
   .field
-    = f.label :message
-    = f.text_area :message, {required: '', placeholder: "Write your message here..."}
+    = f.label "Сообщение"
+    = f.text_area :message, {required: '', placeholder: "Ваше сообщение..."}
   .field.hide
-    = f.label :extra
-    = f.text_field :extra, {placeholder: "Additional Information"}
+    = f.label "Дополнительно"
+    = f.text_field :extra, {placeholder: "Дополнительная информация"}
   .field
-    = f.label :type_website
+    = f.label "Тип веб-сайта"
     = f.text_field :type_website, {value: params[:type_website]}
   .actions
     = f.submit t('form.send'), class: "button success radius"
